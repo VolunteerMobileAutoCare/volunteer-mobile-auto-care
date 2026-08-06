@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Mobile Auto Service | Volunteer Mobile Auto Care</title>
+  <meta name="description" content="Request mobile auto repair or maintenance service from Volunteer Mobile Auto Care.">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://volunteermobileautocare.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Request Mobile Auto Service | Volunteer Mobile Auto Care">
+  <meta property="og:description" content="Request mobile auto repair or maintenance service from Volunteer Mobile Auto Care.">
+  <meta property="og:image" content="https://volunteermobileautocare.com/assets/images/logo.webp">
+  <link rel="icon" href="/favicon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/index.html" aria-label="Volunteer Mobile Auto Care home"><img src="/assets/images/logo.webp" alt="Volunteer Mobile Auto Care"></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Primary"><a class="" href="/index.html">Home</a><a class="" href="/services.html">Services</a><a class="" href="/pricing.html">Pricing</a><a class="" href="/about.html">About</a><a class="" href="/fleet.html">Fleet</a><a class="" href="/referral.html">Rewards</a><a class="active" href="/contact.html">Contact</a></nav>
+    <a class="button button-small desktop-call" href="tel:+18658503395">Call (865) 850-3395</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="container"><p class="eyebrow">Contact</p><h1>Request mobile service</h1><p>Include the vehicle, mileage, location, and a brief description of the concern.</p></div></section>
+<section class="section"><div class="container contact-grid"><div><h2>Call or text</h2><p>For the quickest response, call or text <strong>(865) 850-3395</strong>.</p><div class="hero-actions"><a class="button" href="tel:+18658503395">Call now</a><a class="button button-outline dark-outline" href="sms:+18658503395">Text us</a></div><div class="contact-note"><h3>Before your appointment</h3><ul><li>Park on a firm, level surface.</li><li>Allow adequate room around the vehicle.</li><li>Have keys and wheel-lock keys available.</li><li>Tell us about HOA, workplace, or parking restrictions.</li></ul></div></div>
+<form id="service-form" class="contact-form" method="post" action="/api/contact"><div class="form-row"><label>Name<input name="name" autocomplete="name" required></label><label>Phone<input name="phone" autocomplete="tel" required></label></div><div class="form-row"><label>Email<input name="email" type="email" autocomplete="email"></label><label>City / ZIP<input name="location" required></label></div><div class="form-row"><label>Year / Make / Model<input name="vehicle" required></label><label>Mileage<input name="mileage" inputmode="numeric"></label></div><label>Service type<select name="service"><option>General repair or diagnosis</option><option>Maintenance</option><option>Brakes</option><option>Coolant service</option><option>A/C service</option><option>Pre-purchase inspection</option><option>Fleet service</option></select></label><label>What does the vehicle need?<textarea name="message" rows="6" required></textarea></label><button class="button button-full" type="submit">Send request</button><p id="form-status" class="form-status" role="status" aria-live="polite"></p></form></div></section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><img class="footer-logo" src="/assets/images/logo.webp" alt=""><p>Professional service. Transparent pricing. We come to you.</p></div>
+    <div><h3>Explore</h3><a href="/services.html">Services</a><a href="/pricing.html">Pricing</a><a href="/referral.html">Rewards</a><a href="/contact.html">Request service</a></div>
+    <div><h3>Contact</h3><a href="tel:+18658503395">(865) 850-3395</a><a href="sms:+18658503395">Text us</a><span>East Tennessee</span></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span id="year"></span> Volunteer Mobile Auto Care. All rights reserved.</span><a href="/privacy.html">Privacy</a></div>
+</footer>
+<a class="floating-call" href="tel:+18658503395">Call now</a>
+</body>
+</html>
