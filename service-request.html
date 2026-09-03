@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request mobile automotive service from Volunteer Mobile Auto Care.">
+  <meta name="theme-color" content="#0d0d0f">
+  <title>Request Service | Volunteer Mobile Auto Care</title>
+<style>
+#form-success,
+#form-error {
+  margin: 30px;
+  padding: 28px;
+  border-radius: 18px;
+}
+
+#form-success {
+  background: rgba(244, 106, 18, 0.10);
+  border: 1px solid rgba(244, 106, 18, 0.45);
+}
+
+#form-success h2 {
+  margin: 0 0 12px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+#form-success p {
+  margin: 10px 0 0;
+  color: #d7d7da;
+}
+
+#form-error {
+  background: rgba(190, 45, 45, 0.12);
+  border: 1px solid rgba(255, 100, 100, 0.45);
+  color: #ffffff;
+}
+
+#form-error a {
+  color: #f46a12;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  #form-success,
+  #form-error {
+    margin: 18px;
+    padding: 22px 18px;
+  }
+} 
+ <style>
+    :root{--black:#0d0d0f;--panel:#151518;--line:#34343a;--text:#f7f7f5;--muted:#b9b9bd;--orange:#f46a12;--orange2:#ff7a1a;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(244,106,18,.11),transparent 34rem),linear-gradient(180deg,#0b0b0d,#121215);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    a{color:inherit} img{max-width:100%;display:block}
+    .site-header{border-bottom:1px solid rgba(255,255,255,.08);background:rgba(13,13,15,.94)}
+    .header-inner{width:min(1120px,calc(100% - 32px));margin:auto;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand img{width:142px;border-radius:8px}.brand{text-decoration:none}.header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+    .header-link{text-decoration:none;color:var(--muted);font-weight:750}.call-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:999px;background:var(--orange);color:#111;font-weight:900;text-decoration:none}
+    main{width:min(1120px,calc(100% - 32px));margin:auto;padding:44px 0 72px}
+    .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:28px;align-items:end;margin-bottom:28px}
+    .eyebrow{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:var(--orange2);margin-bottom:12px}
+    h1{margin:0;font-size:clamp(2.25rem,6vw,4.7rem);line-height:.98;letter-spacing:-.045em}
+    .hero p{margin:18px 0 0;color:var(--muted);font-size:1.06rem;max-width:720px}
+    .hero-note{background:linear-gradient(145deg,rgba(244,106,18,.13),rgba(255,255,255,.035));border:1px solid rgba(244,106,18,.36);padding:18px 20px;border-radius:18px}.hero-note strong{display:block;margin-bottom:5px}.hero-note span{color:var(--muted);font-size:.94rem}
+    .form-shell{background:rgba(21,21,24,.96);border:1px solid rgba(255,255,255,.09);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.28);overflow:hidden}
+    .form-section{padding:30px;border-bottom:1px solid rgba(255,255,255,.075)}.form-section:last-of-type{border-bottom:0}
+    .section-heading{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}.section-number{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#101012;font-weight:950}
+    h2{font-size:1.35rem;margin:2px 0 3px;letter-spacing:-.02em}.section-heading p{margin:0;color:var(--muted);font-size:.92rem}
+    .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}.col-12{grid-column:span 12}.col-6{grid-column:span 6}.col-3{grid-column:span 3}
+    label,.field-label{display:block;font-weight:800;font-size:.9rem;margin-bottom:7px}.optional{color:var(--muted);font-weight:600;font-size:.78rem;margin-left:5px}
+    input,select,textarea{width:100%;min-height:48px;border-radius:11px;border:1px solid var(--line);background:#101013;color:var(--white);padding:12px 13px;font:inherit;font-size:16px;outline:none;transition:.15s}
+    textarea{min-height:132px;resize:vertical}input::placeholder,textarea::placeholder{color:#78787e}input:focus,select:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(244,106,18,.16);background:#131316}
+    .choice-group{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice label{min-height:48px;margin:0;border:1px solid var(--line);background:#101013;border-radius:11px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 12px;cursor:pointer;color:#d9d9dc}.choice input:checked+label{border-color:var(--orange);background:rgba(244,106,18,.13);color:white;box-shadow:0 0 0 2px rgba(244,106,18,.12)}
+    .check-row{display:flex;align-items:flex-start;gap:11px}.check-row input{width:20px;min-height:20px;height:20px;margin-top:2px;accent-color:var(--orange);flex:0 0 20px}.check-row label{font-weight:650;margin:0;color:#e7e7e9}.help{color:var(--muted);font-size:.8rem;margin-top:6px}
+    .form-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 30px 28px;background:#111114}.fine-print{color:var(--muted);font-size:.82rem;max-width:660px;margin:0}
+    .submit-btn{flex:0 0 auto;min-height:52px;border:0;border-radius:12px;padding:0 24px;background:var(--orange);color:#111;font-weight:950;font-size:1rem;cursor:pointer;box-shadow:0 10px 22px rgba(244,106,18,.16)}.submit-btn:hover{background:var(--orange2)}
+    .privacy{text-align:center;color:#8e8e94;font-size:.78rem;margin-top:17px}.honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+    @media(max-width:820px){.hero{grid-template-columns:1fr}.col-6,.col-3{grid-column:span 12}.choice-group{grid-template-columns:1fr}.form-footer{align-items:stretch;flex-direction:column}.submit-btn{width:100%}}
+    @media(max-width:600px){.header-inner{width:min(100% - 24px,1120px);min-height:70px}.brand img{width:116px}.header-link{display:none}main{width:min(100% - 24px,1120px);padding-top:30px}.form-section{padding:23px 18px}.form-footer{padding:22px 18px}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Volunteer Mobile Auto Care home"><img src="/assets/images/volunteer-mobile-auto-care-logo.jpg" alt="Volunteer Mobile Auto Care"></a>
+    <div class="header-actions"><a class="header-link" href="/">Back to website</a><a class="call-btn" href="tel:+18658503395">Call / Text (865) 850-3395</a></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div><div class="eyebrow">Mobile diagnostics • maintenance • repairs</div><h1>Request Mobile Auto Service</h1><p>Tell us about your vehicle and what you need help with. The more detail you provide, the better prepared we can be when we contact you.</p></div>
+    <aside class="hero-note"><strong>This is a service request—not a confirmed appointment.</strong><span>We’ll review your request and contact you to discuss the job, pricing, service location, and availability before scheduling.</span></aside>
+  </section>
+
+  <div class="form-shell">
+    <!-- Formspree endpoint: moeqwgkk -->
+<div id="form-success" hidden></div>
+<div id="form-error" hidden></div>
+    <form id="service-request-form" action="https://formspree.io/f/moeqwgkk" method="POST">
+      <input type="hidden" name="_subject" value="New Website Service Request">
+      <input type="hidden" name="Source" value="Volunteer Mobile Auto Care Website">
+      <div class="honeypot" aria-hidden="true"><label for="_gotcha">Leave blank</label><input id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+
+      <section class="form-section">
+        <div class="section-heading"><div class="section-number">1</div><div><h2>Contact information</h2><p>How should we reach you about this request?</p></div></div>
+        <div class="grid">
+          <div class="field col-6"><label for="name">Full name *</label><input id="name" name="Customer Name" type="text" autocomplete="name" required></div>
+          <div class="field col-6"><label for="phone">Phone number *</label><input id="phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(865) 555-0123" required></div>
+          <div class="field col-6"><label for="email">Email <span class="optional">optional</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com"></div>
+          <div class="field col-6"><span class="field-label">Preferred contact method *</span><div class="choice-group">
+            <div class="choice"><input id="contact-text" type="radio" name="Preferred Contact" value="Text" checked><label for="contact-text">Text</label></div>
+            <div class="choice"><input id="contact-call" type="radio" name="Preferred Contact" value="Call"><label for="contact-call">Call</label></div>
+            <div class="choice"><input id="contact-email" type="radio" name="Preferred Contact" value="Email"><label for="contact-email">Email</label></div>
+          </div></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading"><div class="section-number">2</div><div><h2>Vehicle information</h2><p>Basic vehicle details help us identify parts, labor, and common issues.</p></div></div>
+        <div class="grid">
+          <div class="field col-3"><label for="year">Year *</label><input id="year" name="Vehicle Year" type="number" inputmode="numeric" min="1900" max="2035" placeholder="2017" required></div>
+          <div class="field col-3"><label for="make">Make *</label><input id="make" name="Vehicle Make" type="text" placeholder="Ford" required></div>
+          <div class="field col-3"><label for="model">Model *</label><input id="model" name="Vehicle Model" type="text" placeholder="F-150" required></div>
+          <div class="field col-3"><label for="mileage">Mileage <span class="optional">optional</span></label><input id="mileage" name="Mileage" type="number" inputmode="numeric" min="0" max="999999" placeholder="125000"></div>
+          <div class="field col-6"><label for="engine">Engine <span class="optional">if known</span></label><input id="engine" name="Engine" type="text" placeholder="Example: 2.7L EcoBoost"></div>
+          <div class="field col-6"><label for="vin">VIN <span class="optional">optional</span></label><input id="vin" name="VIN" type="text" maxlength="17" autocomplete="off" placeholder="17-character VIN"><div class="help">Providing the VIN can help us identify the correct parts before we contact you.</div></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading"><div class="section-number">3</div><div><h2>What can we help with?</h2><p>Describe the service needed or the symptoms you’re experiencing.</p></div></div>
+        <div class="grid">
+          <div class="field col-6"><label for="service">Service type *</label><select id="service" name="Service Type" required>
+            <option value="" selected disabled>Select a service</option>
+            <option>Diagnostics / Check Engine Light</option><option>Oil Change / Routine Maintenance</option><option>Brakes</option><option>Steering / Suspension</option><option>Cooling System / Overheating</option><option>Electrical / Starting / Charging</option><option>A/C / Heating</option><option>Engine Repair</option><option>Pre-Purchase Inspection</option><option>Other Repair / Service</option>
+          </select></div>
+          <div class="field col-6"><span class="field-label">Is the vehicle currently drivable? *</span><div class="choice-group">
+            <div class="choice"><input id="drive-yes" type="radio" name="Vehicle Drivable" value="Yes"><label for="drive-yes">Yes</label></div>
+            <div class="choice"><input id="drive-no" type="radio" name="Vehicle Drivable" value="No"><label for="drive-no">No</label></div>
+            <div class="choice"><input id="drive-unsure" type="radio" name="Vehicle Drivable" value="Unsure" checked><label for="drive-unsure">Unsure</label></div>
+          </div></div>
+          <div class="field col-12"><label for="problem">Describe the problem or service needed *</label><textarea id="problem" name="Problem / Service Description" required placeholder="Tell us what the vehicle is doing, noises you hear, when the problem occurs, how long it has been happening, or what service you would like performed."></textarea></div>
+          <div class="field col-6"><label for="codes">Warning lights or trouble codes <span class="optional">optional</span></label><input id="codes" name="Warning Lights / Codes" type="text" placeholder="Example: Check Engine Light, P0301"></div>
+          <div class="field col-6"><label for="recent-work">Recent repairs or parts replaced <span class="optional">optional</span></label><input id="recent-work" name="Recent Repairs" type="text" placeholder="Anything recently repaired or replaced?"></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading"><div class="section-number">4</div><div><h2>Service location</h2><p>We’re mobile, so tell us where the vehicle is located.</p></div></div>
+        <div class="grid">
+          <div class="field col-6"><label for="city">City *</label><input id="city" name="Service City" type="text" autocomplete="address-level2" required></div>
+          <div class="field col-6"><label for="zip">ZIP code *</label><input id="zip" name="ZIP Code" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" required></div>
+          <div class="field col-12"><label for="address">Street address <span class="optional">optional until scheduling</span></label><input id="address" name="Service Address" type="text" autocomplete="street-address" placeholder="You may leave this blank if you prefer to provide it when we contact you."></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading"><div class="section-number">5</div><div><h2>Scheduling preference</h2><p>This helps us understand your availability; it does not reserve an appointment.</p></div></div>
+        <div class="grid">
+          <div class="field col-6"><label for="preferred-date">Preferred date <span class="optional">optional</span></label><input id="preferred-date" name="Preferred Date" type="date"></div>
+          <div class="field col-6"><label for="preferred-time">Preferred time <span class="optional">optional</span></label><select id="preferred-time" name="Preferred Time"><option value="">No preference</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+          <div class="field col-12"><label for="schedule-notes">Scheduling notes <span class="optional">optional</span></label><input id="schedule-notes" name="Scheduling Notes" type="text" placeholder="Example: Available after 3 PM, vehicle is at my workplace, etc."></div>
+          <div class="field col-12"><div class="check-row"><input id="consent" name="Contact Permission" type="checkbox" value="Yes" required><label for="consent">I understand this is a request for service and not a confirmed appointment, and I authorize Volunteer Mobile Auto Care to contact me about this request. *</label></div></div>
+        </div>
+      </section>
+
+      <div class="form-footer"><p class="fine-print">Please do not submit credit-card numbers, payment information, Social Security numbers, or other sensitive information through this form.</p><button class="submit-btn" type="submit">Submit Service Request</button></div>
+    </form>
+  </div>
+  <div class="privacy">Volunteer Mobile Auto Care • Professional Service. Transparent Pricing. We Come to You!</div>
+</main>
+<script>
+(function () {
+  const form = document.getElementById('service-request-form');
+  const successBox = document.getElementById('form-success');
+  const errorBox = document.getElementById('form-error');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  // Prevent customers from selecting a past preferred date.
+  const dateInput = document.getElementById('preferred-date');
+
+  if (dateInput) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    dateInput.min = `${year}-${month}-${day}`;
+  }
+
+  // Format VIN as uppercase and prevent invalid VIN characters.
+  const vin = document.getElementById('vin');
+
+  if (vin) {
+    vin.addEventListener('input', function () {
+      this.value = this.value
+        .toUpperCase()
+        .replace(/[^A-HJ-NPR-Z0-9]/g, '')
+        .slice(0, 17);
+    });
+  }
+
+  // Submit the service request to Formspree without leaving the website.
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    errorBox.hidden = true;
+    successBox.hidden = true;
+
+    const originalButtonText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending Request...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.hidden = true;
+
+        successBox.innerHTML = `
+          <h2>Service Request Received</h2>
+          <p>
+            Thank you for contacting Volunteer Mobile Auto Care.
+            We've received your request and will contact you to discuss
+            your vehicle, service needs, pricing, and scheduling.
+          </p>
+          <p>
+            <strong>Submitting this request does not confirm an appointment.</strong>
+          </p>
+        `;
+
+        successBox.hidden = false;
+        successBox.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      } else {
+        throw new Error('Form submission failed.');
+      }
+
+    } catch (error) {
+      errorBox.innerHTML = `
+        <strong>We couldn't send your request.</strong>
+        Please try again or call/text us at
+        <a href="tel:+18658503395">(865) 850-3395</a>.
+      `;
+
+      errorBox.hidden = false;
+
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+  });
+})();
+</script></body>
+</html>
