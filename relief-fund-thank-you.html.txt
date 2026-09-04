@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thank You | Auto Care Relief Fund</title>
+
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <style>
+    .relief-thank-you {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 20px;
+      background: #111113;
+    }
+
+    .relief-thank-you-card {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 36px;
+      text-align: center;
+      background: #19191c;
+      border: 1px solid #343438;
+      border-radius: 20px;
+    }
+
+    .relief-thank-you-card img {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 0 auto 32px;
+      border-radius: 16px;
+    }
+
+    .relief-thank-you-card .eyebrow {
+      color: #f46a12;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .relief-thank-you-card h1 {
+      color: #ffffff;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 20px;
+    }
+
+    .relief-thank-you-card p {
+      color: #c7c7cc;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto 18px;
+    }
+
+    .relief-thank-you-card strong {
+      color: #ffffff;
+    }
+
+    .relief-thank-you-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .relief-thank-you-card {
+        padding: 26px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="relief-thank-you">
+    <div class="relief-thank-you-card">
+
+      <img
+        src="/assets/images/auto-care-relief-fund.png"
+        alt="Volunteer Mobile Auto Care Auto Care Relief Fund"
+      >
+
+      <p class="eyebrow">Thank You for Your Support</p>
+
+      <h1>Your Contribution Makes a Difference</h1>
+
+      <p>
+        Thank you for contributing to the
+        <strong>Auto Care Relief Fund.</strong>
+      </p>
+
+      <p>
+        Your support helps us provide qualifying auto repair assistance
+        to members of our local community who may otherwise struggle to
+        keep a safe and reliable vehicle on the road.
+      </p>
+
+      <p>
+        Every contribution, no matter the amount, helps us extend a hand
+        to a neighbor when dependable transportation matters most.
+      </p>
+
+      <p>
+        <strong>We sincerely appreciate you helping us help our community.</strong>
+      </p>
+
+      <div class="relief-thank-you-actions">
+        <a class="button" href="/">
+          Return to Home
+        </a>
+
+        <a class="button" href="/service-request.html">
+          Request Service
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
