@@ -23,3 +23,21 @@
 .site-header .nav-wrap {
   min-height: 110px !important;
 }
+/* Homepage service card icons */
+.service-icon {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  color: var(--orange);
+}
+
+.service-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
