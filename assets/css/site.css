@@ -46,3 +46,12 @@
 .service-icon i {
   display: inline-block;
 }
+/* Final footer logo styling */
+.site-footer .footer-logo {
+  width: 320px !important;
+  height: auto !important;
+  max-width: 100% !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
