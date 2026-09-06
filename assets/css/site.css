@@ -25,17 +25,16 @@
 }
 /* Homepage service card icons */
 .service-icon {
-  width: 56px;
-  height: 56px;
+  width: 68px;
+  height: 68px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
   color: var(--orange);
-  font-size: 2rem;
+  font-size: 2.4rem;
   line-height: 1;
 }
-
 .service-icon i {
   display: inline-block;
 }
