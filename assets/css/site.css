@@ -121,3 +121,18 @@
     display: none;
   }
 }
+.tire-price-heading {
+  max-width: 760px;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.tire-price-heading h3 {
+  margin: 0 0 6px;
+  font-size: 1.45rem;
+}
+
+.tire-price-heading p:last-child {
+  margin: 0;
+  color: #666b75;
+}
