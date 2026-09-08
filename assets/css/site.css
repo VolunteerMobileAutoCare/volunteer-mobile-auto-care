@@ -136,3 +136,37 @@
   margin: 0;
   color: #666b75;
 }
+.process-container {
+  display: block;
+}
+
+.process-container > div {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.process-container .steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: none;
+}
+
+.process-container .steps li {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .process-container .steps {
+    grid-template-columns: 1fr;
+  }
+}.cta-outline {
+  color: #111827 !important;
+  border-color: #111827 !important;
+  background: transparent !important;
+}
+
+.cta-outline:hover {
+  background: #111827 !important;
+  color: #fff !important;
+}
