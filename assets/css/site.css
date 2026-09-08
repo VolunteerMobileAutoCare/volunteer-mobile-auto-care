@@ -62,3 +62,10 @@
   line-height: 1.5;
   max-width: 760px;
 }
+.site-footer .footer-brand img.footer-logo {
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
