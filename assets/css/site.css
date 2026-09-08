@@ -69,3 +69,55 @@
   border-radius: 0 !important;
   box-shadow: none !important;
 }
+.tire-price-table {
+  overflow: hidden;
+  border: 1px solid #d9dde5;
+  border-radius: 18px;
+  background: #fff;
+  max-width: 760px;
+  margin-top: 20px;
+}
+
+.tire-price-row {
+  display: grid;
+  grid-template-columns: 1.7fr .7fr 1fr .6fr;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #d9dde5;
+}
+
+.tire-price-row:last-child {
+  border-bottom: 0;
+}
+
+.tire-price-head {
+  background: #111827;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.tire-price-row strong {
+  color: #d92d38;
+  font-size: 1.1rem;
+}
+
+.tire-price-note {
+  max-width: 760px;
+  margin: 10px 0 0;
+  color: #666b75;
+  font-size: .9rem;
+}
+
+@media (max-width: 650px) {
+  .tire-price-row {
+    grid-template-columns: 1.4fr .7fr .9fr;
+  }
+
+  .tire-price-row > :last-child {
+    display: none;
+  }
+}
