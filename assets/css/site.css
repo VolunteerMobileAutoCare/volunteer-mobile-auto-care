@@ -177,4 +177,9 @@
   max-width: 900px;
   margin: 0 auto 28px;
   text-align: center;
+}.process-title {
+  margin: 0 0 28px;
+  text-align: center;
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  line-height: 1;
 }
