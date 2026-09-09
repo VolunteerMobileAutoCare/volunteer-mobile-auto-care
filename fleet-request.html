@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request on-site fleet maintenance, diagnostics, and repair from Volunteer Mobile Auto Care.">
+  <meta name="theme-color" content="#0d0d0f">
+  <title>Fleet Service Request | Volunteer Mobile Auto Care</title>
+<style>
+#form-success,
+#form-error {
+  margin: 30px;
+  padding: 28px;
+  border-radius: 18px;
+}
+
+#form-success {
+  background: rgba(244, 106, 18, 0.10);
+  border: 1px solid rgba(244, 106, 18, 0.45);
+}
+
+#form-success h2 {
+  margin: 0 0 12px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+#form-success p {
+  margin: 10px 0 0;
+  color: #d7d7da;
+}
+
+#form-error {
+  background: rgba(190, 45, 45, 0.12);
+  border: 1px solid rgba(255, 100, 100, 0.45);
+  color: #ffffff;
+}
+
+#form-error a {
+  color: #f46a12;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  #form-success,
+  #form-error {
+    margin: 18px;
+    padding: 22px 18px;
+  }
+} 
+/* Improve service request form readability */
+
+.hero h1,
+.hero p,
+.hero .eyebrow,
+.hero-note,
+.hero-note strong {
+  color: #f5f5f5;
+}
+
+.form-shell {
+  background: #171719;
+  border: 1px solid #35353a;
+}
+
+.form-shell h2 {
+  color: #ffffff;
+}
+
+.form-shell p {
+  color: #bfc0c5;
+}
+
+.form-shell label {
+  color: #f1f1f1;
+  font-weight: 700;
+}
+
+.form-shell .optional {
+  color: #9b9ca2;
+}
+
+.form-shell input,
+.form-shell select,
+.form-shell textarea {
+  background: #0d0d0f;
+  color: #ffffff;
+  border: 1px solid #3a3a40;
+}
+
+.form-shell input::placeholder,
+.form-shell textarea::placeholder {
+  color: #85868c;
+}
+
+.form-shell input:focus,
+.form-shell select:focus,
+.form-shell textarea:focus {
+  border-color: #f46a12;
+  outline: 2px solid rgba(244, 106, 18, 0.2);
+}
+
+.section-number {
+  color: #f46a12;
+}
+
+.form-section {
+  border-color: #303035;
+}
+/* Final readability overrides */
+
+.hero > div > p {
+  color: #c7c7cc !important;
+}
+
+.form-section .section-heading p,
+.form-section p {
+  color: #aeb0b6 !important;
+}
+
+.form-section legend,
+.form-section .field-label {
+  color: #f1f1f1 !important;
+  font-weight: 700;
+}
+
+.form-section .optional {
+  color: #aeb0b6 !important;
+}
+
+.section-number {
+  color: #f46a12 !important;
+  font-weight: 800;
+} 
+
+    :root{--black:#0d0d0f;--panel:#151518;--line:#34343a;--text:#f7f7f5;--muted:#b9b9bd;--orange:#f46a12;--orange2:#ff7a1a;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(244,106,18,.11),transparent 34rem),linear-gradient(180deg,#0b0b0d,#121215);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    a{color:inherit} img{max-width:100%;display:block}
+    .site-header{border-bottom:1px solid rgba(255,255,255,.08);background:rgba(13,13,15,.94)}
+    .header-inner{width:min(1120px,calc(100% - 32px));margin:auto;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand img{width:142px;border-radius:8px}.brand{text-decoration:none}.header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+    .header-link{text-decoration:none;color:var(--muted);font-weight:750}.call-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:999px;background:var(--orange);color:#111;font-weight:900;text-decoration:none}
+    main{width:min(1120px,calc(100% - 32px));margin:auto;padding:44px 0 72px}
+    .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:28px;align-items:end;margin-bottom:28px}
+    .eyebrow{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:var(--orange2);margin-bottom:12px}
+    h1{margin:0;font-size:clamp(2.25rem,6vw,4.7rem);line-height:.98;letter-spacing:-.045em}
+    .hero p{margin:18px 0 0;color:var(--muted);font-size:1.06rem;max-width:720px}
+    .hero-note{background:linear-gradient(145deg,rgba(244,106,18,.13),rgba(255,255,255,.035));border:1px solid rgba(244,106,18,.36);padding:18px 20px;border-radius:18px}.hero-note strong{display:block;margin-bottom:5px}.hero-note span{color:var(--muted);font-size:.94rem}
+    .form-shell{background:rgba(21,21,24,.96);border:1px solid rgba(255,255,255,.09);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.28);overflow:hidden}
+    .form-section{padding:30px;border-bottom:1px solid rgba(255,255,255,.075)}.form-section:last-of-type{border-bottom:0}
+    .section-heading{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}.section-number{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#101012;font-weight:950}
+    h2{font-size:1.35rem;margin:2px 0 3px;letter-spacing:-.02em}.section-heading p{margin:0;color:var(--muted);font-size:.92rem}
+    .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}.col-12{grid-column:span 12}.col-6{grid-column:span 6}.col-3{grid-column:span 3}
+    label,.field-label{display:block;font-weight:800;font-size:.9rem;margin-bottom:7px}.optional{color:var(--muted);font-weight:600;font-size:.78rem;margin-left:5px}
+    input,select,textarea{width:100%;min-height:48px;border-radius:11px;border:1px solid var(--line);background:#101013;color:var(--white);padding:12px 13px;font:inherit;font-size:16px;outline:none;transition:.15s}
+    textarea{min-height:132px;resize:vertical}input::placeholder,textarea::placeholder{color:#78787e}input:focus,select:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(244,106,18,.16);background:#131316}
+    .choice-group{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice label{min-height:48px;margin:0;border:1px solid var(--line);background:#101013;border-radius:11px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 12px;cursor:pointer;color:#d9d9dc}.choice input:checked+label{border-color:var(--orange);background:rgba(244,106,18,.13);color:white;box-shadow:0 0 0 2px rgba(244,106,18,.12)}
+    .check-row{display:flex;align-items:flex-start;gap:11px}.check-row input{width:20px;min-height:20px;height:20px;margin-top:2px;accent-color:var(--orange);flex:0 0 20px}.check-row label{font-weight:650;margin:0;color:#e7e7e9}.help{color:var(--muted);font-size:.8rem;margin-top:6px}
+    .form-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 30px 28px;background:#111114}.fine-print{color:var(--muted);font-size:.82rem;max-width:660px;margin:0}
+    .submit-btn{flex:0 0 auto;min-height:52px;border:0;border-radius:12px;padding:0 24px;background:var(--orange);color:#111;font-weight:950;font-size:1rem;cursor:pointer;box-shadow:0 10px 22px rgba(244,106,18,.16)}.submit-btn:hover{background:var(--orange2)}
+    .privacy{text-align:center;color:#8e8e94;font-size:.78rem;margin-top:17px}.honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+    @media(max-width:820px){.hero{grid-template-columns:1fr}.col-6,.col-3{grid-column:span 12}.choice-group{grid-template-columns:1fr}.form-footer{align-items:stretch;flex-direction:column}.submit-btn{width:100%}}
+    @media(max-width:600px){.header-inner{width:min(100% - 24px,1120px);min-height:70px}.brand img{width:116px}.header-link{display:none}main{width:min(100% - 24px,1120px);padding-top:30px}.form-section{padding:23px 18px}.form-footer{padding:22px 18px}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Volunteer Mobile Auto Care home"><img src="/assets/images/volunteer-mobile-auto-care-logo.png" alt="Volunteer Mobile Auto Care"></a>
+    <div class="header-actions"><a class="header-link" href="/">Back to website</a><a class="call-btn" href="tel:+18658503395">Call / Text (865) 850-3395</a></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div><div class="eyebrow">On-site fleet maintenance • diagnostics • repair</div><h1>Request Fleet Service</h1><p>Tell us about your business, fleet, and service needs. We’ll review the information and contact you to discuss service options, scheduling, and availability.</p></div>
+    <aside class="hero-note"><strong>This is a fleet service inquiry—not a confirmed appointment.</strong><span>We’ll review your inquiry and contact you to discuss your fleet needs, service location, pricing, scheduling, and availability.</span>ng.</span></aside>
+  </section>
+
+  <div class="form-shell">
+    <!-- Fleet Service Inquiry Form -->
+<div id="form-success" hidden></div>
+<div id="form-error" hidden></div>
+    <form id="service-request-form" action="https://formspree.io/f/myeybojo" method="POST">
+      <input type="hidden" name="_subject" value="New Fleet Service Inquiry">
+     <input type="hidden" name="Source" value="Volunteer Mobile Auto Care Fleet Page">
+      <div class="honeypot" aria-hidden="true"><label for="_gotcha">Leave blank</label><input id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+
+   <section class="form-section">
+  <div class="section-heading">
+    <div class="section-number">1</div>
+    <div>
+      <h2>Business &amp; contact information</h2>
+      <p>Who should we contact about fleet service?</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="field col-6">
+      <label for="business-name">Business / company name *</label>
+      <input id="business-name" name="Business Name" type="text" required>
+    </div>
+
+    <div class="field col-6">
+      <label for="contact-name">Contact name *</label>
+      <input id="contact-name" name="Contact Name" type="text" autocomplete="name" required>
+    </div>
+
+    <div class="field col-6">
+      <label for="phone">Phone number *</label>
+      <input id="phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(865) 555-0123" required>
+    </div>
+
+    <div class="field col-6">
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required>
+    </div>
+
+    <div class="field col-6">
+      <span class="field-label">Preferred contact method *</span>
+      <div class="choice-group">
+        <div class="choice">
+          <input id="contact-text" type="radio" name="Preferred Contact" value="Text" checked>
+          <label for="contact-text">Text</label>
+        </div>
+        <div class="choice">
+          <input id="contact-call" type="radio" name="Preferred Contact" value="Call">
+          <label for="contact-call">Call</label>
+        </div>
+        <div class="choice">
+          <input id="contact-email" type="radio" name="Preferred Contact" value="Email">
+          <label for="contact-email">Email</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="form-section">
+  <div class="section-heading">
+    <div class="section-number">2</div>
+    <div>
+      <h2>Fleet details</h2>
+      <p>Tell us a little about the vehicles you operate.</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="field col-6">
+      <label for="fleet-size">Approximate fleet size *</label>
+      <select id="fleet-size" name="Approximate Fleet Size" required>
+        <option value="">Select fleet size</option>
+        <option value="2-5 vehicles">2–5 vehicles</option>
+        <option value="6-10 vehicles">6–10 vehicles</option>
+        <option value="11-20 vehicles">11–20 vehicles</option>
+        <option value="21-50 vehicles">21–50 vehicles</option>
+        <option value="51+ vehicles">51+ vehicles</option>
+      </select>
+    </div>
+
+    <div class="field col-6">
+      <label for="fleet-use">Primary fleet use *</label>
+      <select id="fleet-use" name="Primary Fleet Use" required>
+        <option value="">Select primary use</option>
+        <option value="Contractor / Trade">Contractor / Trade</option>
+        <option value="Delivery / Local Route">Delivery / Local Route</option>
+        <option value="Property Management">Property Management</option>
+        <option value="Company / Employee Vehicles">Company / Employee Vehicles</option>
+        <option value="Municipal / Nonprofit">Municipal / Nonprofit</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field col-6">
+      <span class="field-label">Vehicle types</span>
+      <div class="choice-group">
+        <div class="choice">
+          <input id="fleet-cars" type="checkbox" name="Vehicle Types" value="Cars">
+          <label for="fleet-cars">Cars</label>
+        </div>
+        <div class="choice">
+          <input id="fleet-trucks" type="checkbox" name="Vehicle Types" value="Light-Duty Trucks">
+          <label for="fleet-trucks">Light-Duty Trucks</label>
+        </div>
+        <div class="choice">
+          <input id="fleet-vans" type="checkbox" name="Vehicle Types" value="Vans">
+          <label for="fleet-vans">Vans</label>
+        </div>
+        <div class="choice">
+          <input id="fleet-suvs" type="checkbox" name="Vehicle Types" value="SUVs">
+          <label for="fleet-suvs">SUVs</label>
+        </div>
+        <div class="choice">
+          <input id="fleet-mixed" type="checkbox" name="Vehicle Types" value="Mixed Fleet">
+          <label for="fleet-mixed">Mixed Fleet</label>
+        </div>
+        <div class="choice">
+          <input id="fleet-other" type="checkbox" name="Vehicle Types" value="Other">
+          <label for="fleet-other">Other</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field col-6">
+      <label for="makes-models">Typical makes / models <span class="optional">optional</span></label>
+      <textarea id="makes-models" name="Typical Makes and Models" rows="4" placeholder="Example: Ford Transit, Chevrolet Silverado, Ram ProMaster..."></textarea>
+    </div>
+  </div>
+</section>
+
+     <section class="form-section">
+  <div class="section-heading">
+    <div class="section-number">3</div>
+    <div>
+      <h2>Fleet service needs</h2>
+      <p>What kind of support are you looking for?</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="field col-6">
+      <span class="field-label">Service relationship *</span>
+      <div class="choice-group">
+        <div class="choice">
+          <input id="service-one-time" type="radio" name="Service Relationship" value="One-Time Service" checked>
+          <label for="service-one-time">One-Time Service</label>
+        </div>
+        <div class="choice">
+          <input id="service-ongoing" type="radio" name="Service Relationship" value="Ongoing Fleet Support">
+          <label for="service-ongoing">Ongoing Fleet Support</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field col-6">
+      <label for="vehicles-needing-service">Vehicles needing attention now *</label>
+      <input id="vehicles-needing-service" name="Vehicles Needing Service Now" type="number" min="1" placeholder="Example: 3" required>
+    </div>
+
+    <div class="field col-12">
+      <span class="field-label">Services of interest</span>
+      <div class="choice-group">
+        <div class="choice">
+          <input id="service-maintenance" type="checkbox" name="Services of Interest" value="Routine Maintenance">
+          <label for="service-maintenance">Routine Maintenance</label>
+        </div>
+        <div class="choice">
+          <input id="service-oil" type="checkbox" name="Services of Interest" value="Oil Changes">
+          <label for="service-oil">Oil Changes</label>
+        </div>
+        <div class="choice">
+          <input id="service-inspections" type="checkbox" name="Services of Interest" value="Vehicle Inspections">
+          <label for="service-inspections">Vehicle Inspections</label>
+        </div>
+        <div class="choice">
+          <input id="service-brakes" type="checkbox" name="Services of Interest" value="Brake Service">
+          <label for="service-brakes">Brake Service</label>
+        </div>
+        <div class="choice">
+          <input id="service-diagnostics" type="checkbox" name="Services of Interest" value="Diagnostics">
+          <label for="service-diagnostics">Diagnostics</label>
+        </div>
+        <div class="choice">
+          <input id="service-cooling" type="checkbox" name="Services of Interest" value="Cooling System">
+          <label for="service-cooling">Cooling System</label>
+        </div>
+        <div class="choice">
+          <input id="service-steering" type="checkbox" name="Services of Interest" value="Steering and Suspension">
+          <label for="service-steering">Steering / Suspension</label>
+        </div>
+        <div class="choice">
+          <input id="service-electrical" type="checkbox" name="Services of Interest" value="Electrical / Starting / Charging">
+          <label for="service-electrical">Electrical / Starting / Charging</label>
+        </div>
+        <div class="choice">
+          <input id="service-other" type="checkbox" name="Services of Interest" value="Other">
+          <label for="service-other">Other</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field col-12">
+      <label for="fleet-needs">Tell us about your current needs *</label>
+      <textarea id="fleet-needs" name="Current Fleet Service Needs" rows="6" placeholder="Describe any current maintenance needs, repair concerns, recurring service goals, or other fleet requirements." required></textarea>
+    </div>
+  </div>
+</section>
+     <section class="form-section">
+  <div class="section-heading">
+    <div class="section-number">4</div>
+    <div>
+      <h2>Service location &amp; access</h2>
+      <p>Where would fleet service normally be performed?</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="field col-12">
+      <label for="service-address">Business / service address *</label>
+      <input id="service-address" name="Service Address" type="text" autocomplete="street-address" required>
+    </div>
+
+    <div class="field col-6">
+      <label for="city">City *</label>
+      <input id="city" name="City" type="text" autocomplete="address-level2" required>
+    </div>
+
+    <div class="field col-3">
+      <label for="state">State *</label>
+      <input id="state" name="State" type="text" value="TN" autocomplete="address-level1" required>
+    </div>
+
+    <div class="field col-3">
+      <label for="zip">ZIP code *</label>
+      <input id="zip" name="ZIP Code" type="text" inputmode="numeric" autocomplete="postal-code" required>
+    </div>
+
+    <div class="field col-6">
+      <label for="site-type">Service location type *</label>
+      <select id="site-type" name="Service Location Type" required>
+        <option value="">Select location type</option>
+        <option value="Business Parking Lot">Business parking lot</option>
+        <option value="Fleet Yard">Fleet yard</option>
+        <option value="Garage / Shop Area">Garage / shop area</option>
+        <option value="Job Site">Job site</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field col-6">
+      <span class="field-label">Safe, level work area available? *</span>
+      <div class="choice-group">
+        <div class="choice">
+          <input id="work-area-yes" type="radio" name="Safe Level Work Area" value="Yes" checked>
+          <label for="work-area-yes">Yes</label>
+        </div>
+        <div class="choice">
+          <input id="work-area-no" type="radio" name="Safe Level Work Area" value="No">
+          <label for="work-area-no">No</label>
+        </div>
+        <div class="choice">
+          <input id="work-area-unsure" type="radio" name="Safe Level Work Area" value="Unsure">
+          <label for="work-area-unsure">Unsure</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field col-12">
+      <label for="access-notes">Parking, access, or site details <span class="optional">optional</span></label>
+      <textarea id="access-notes" name="Parking and Access Details" rows="4" placeholder="Gate access, parking restrictions, covered work area, vehicle staging, site contact, or anything else we should know."></textarea>
+    </div>
+  </div>
+</section>
+
+     <section class="form-section">
+  <div class="section-heading">
+    <div class="section-number">5</div>
+    <div>
+      <h2>Scheduling preferences</h2>
+      <p>Tell us what timing works best for your operation.</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="field col-6">
+      <label for="preferred-days">Preferred service days <span class="optional">optional</span></label>
+      <input id="preferred-days" name="Preferred Service Days" type="text" placeholder="Example: Mondays, Wednesdays, weekends">
+    </div>
+
+    <div class="field col-6">
+      <label for="preferred-times">Preferred service times <span class="optional">optional</span></label>
+      <input id="preferred-times" name="Preferred Service Times" type="text" placeholder="Example: Before 9 AM, afternoons, after 4 PM">
+    </div>
+
+    <div class="field col-6">
+      <label for="service-frequency">Preferred recurring frequency <span class="optional">optional</span></label>
+      <select id="service-frequency" name="Preferred Recurring Frequency">
+        <option value="">Select if applicable</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Every 2 Weeks">Every 2 weeks</option>
+        <option value="Monthly">Monthly</option>
+        <option value="Every 2 Months">Every 2 months</option>
+        <option value="Quarterly">Quarterly</option>
+        <option value="As Needed">As needed</option>
+        <option value="Not Sure">Not sure yet</option>
+      </select>
+    </div>
+
+    <div class="field col-6">
+      <label for="start-timeframe">When are you looking to begin? *</label>
+      <select id="start-timeframe" name="Desired Start Timeframe" required>
+        <option value="">Select timeframe</option>
+        <option value="As Soon As Possible">As soon as possible</option>
+        <option value="Within 1-2 Weeks">Within 1–2 weeks</option>
+        <option value="Within 1 Month">Within 1 month</option>
+        <option value="Planning Ahead">Planning ahead</option>
+      </select>
+    </div>
+
+    <div class="field col-12">
+      <label for="schedule-notes">Scheduling notes <span class="optional">optional</span></label>
+      <textarea id="schedule-notes" name="Scheduling Notes" rows="4" placeholder="Shift changes, vehicle availability, busiest days, preferred service windows, or other scheduling details."></textarea>
+    </div>
+  </div>
+</section>
+
+      <div class="form-footer"><p class="fine-print">Submitting this form does not create a service agreement or confirm an appointment. We’ll review your fleet information and contact you to discuss service needs, location, scheduling, pricing, and availability.</p><button class="submit-btn" type="submit">Submit Fleet Inquiry</button></div>
+    </form>
+  </div>
+  <div class="privacy">Volunteer Mobile Auto Care • Professional Service. Transparent Pricing. We Come to You!</div>
+</main>
+<script>
+(function () {
+  const form = document.getElementById('service-request-form');
+  const successBox = document.getElementById('form-success');
+  const errorBox = document.getElementById('form-error');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  
+  // Submit the fleet inquiry to Formspree without leaving the website.
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    errorBox.hidden = true;
+    successBox.hidden = true;
+
+    const originalButtonText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending Fleet Inquiry...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.hidden = true;
+
+        successBox.innerHTML = `
+         <h2>Fleet Inquiry Received</h2>
+<p>
+  Thank you for contacting Volunteer Mobile Auto Care.
+  We've received your fleet service inquiry and will contact you to discuss
+  your vehicles, service needs, scheduling, and fleet service options.
+</p>
+          <p>
+            <strong>Submitting this request does not confirm an appointment.</strong>
+          </p>
+        `;
+
+        successBox.hidden = false;
+        successBox.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      } else {
+        throw new Error('Form submission failed.');
+      }
+
+    } catch (error) {
+      errorBox.innerHTML = `
+        <strong>We couldn't send your request.</strong>
+        Please try again or call/text us at
+        <a href="tel:+18658503395">(865) 850-3395</a>.
+      `;
+
+      errorBox.hidden = false;
+
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+  });
+})();
+</script></body>
+</html>
