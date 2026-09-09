@@ -182,3 +182,6 @@
   font-size: clamp(2.25rem, 4vw, 3.25rem);
   line-height: 1;
 }
+.service-note {
+  color: #686b73;
+}
