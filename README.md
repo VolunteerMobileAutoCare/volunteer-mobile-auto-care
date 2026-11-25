@@ -9,7 +9,7 @@ Official multi-page website for Volunteer Mobile Auto Care, built for Cloudflare
 - Pricing
 - About
 - Fleet service
-- Referral rewards and launch specials
+- Savings and rewards
 - Contact and service request
 - Privacy notice
 - Branded 404 page
@@ -20,7 +20,7 @@ Official multi-page website for Volunteer Mobile Auto Care, built for Cloudflare
 - Click-to-call and click-to-text actions
 - Search-engine files (`robots.txt` and `sitemap.xml`)
 - Web app manifest and branded icons
-- Cloudflare Pages Function for contact-form email
+- Formspree service and fleet request forms (legacy Pages function retained)
 - Security headers and caching rules
 - Proprietary license, Git ignore rules, and editor settings
 
@@ -30,7 +30,7 @@ Official multi-page website for Volunteer Mobile Auto Care, built for Cloudflare
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000`. The contact form requires Cloudflare Pages and environment variables.
+Open `http://localhost:8000`. The service and fleet request forms use Formspree. Local previews should not submit live customer inquiries.
 
 ## Deploy with GitHub and Cloudflare Pages
 
@@ -46,13 +46,7 @@ Open `http://localhost:8000`. The contact form requires Cloudflare Pages and env
 
 ## Contact form setup
 
-The form uses the Resend email API. Verify a sending domain in Resend, then add these production environment variables in Cloudflare Pages:
-
-- `RESEND_API_KEY`
-- `CONTACT_TO_EMAIL`
-- `CONTACT_FROM_EMAIL`
-
-Use `.env.example` only as a reference. Never commit real API keys. Redeploy after adding variables.
+The service and fleet request forms retain their existing Formspree endpoints. The legacy `functions/api/contact.js` endpoint is retained pending confirmation that it is no longer needed. Never commit API keys.
 
 ## Before launch
 

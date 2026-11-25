@@ -185,3 +185,6 @@
 .service-note {
   color: #686b73;
 }
+/* Consolidated update: homepage review cards, existing theme. */
+.hero-grid-single{grid-template-columns:1fr}
+.review-card{display:flex;flex-direction:column}.review-card blockquote{margin:0 0 18px;line-height:1.65}.review-card .review-stars,.review-stars{color:var(--orange);font-weight:800}.review-card .review-attribution{margin-top:auto}.review-attribution p{margin:3px 0 0;font-size:.85rem}.review-links{justify-content:center;margin-top:28px}.review-card .review-stars{margin:0 0 12px}

@@ -1,2 +1,3 @@
-/home /index.html 301
-/request-service /contact.html 301
+/home / 301
+/request-service /service-request 302
+/relief-fund-thank-you / 302
